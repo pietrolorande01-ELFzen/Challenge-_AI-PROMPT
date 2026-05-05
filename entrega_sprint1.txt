@@ -1,0 +1,37 @@
+============================================================
+  ENTREGA SPRINT 1 — EV CHALLENGE 2026 | GOODWE + FIAP
+============================================================
+
+INTEGRANTES:
+------------------------------------------------------------
+Nome: ________________________________  RM: ____________
+Nome: ________________________________  RM: ____________
+Nome: ________________________________  RM: ____________
+Nome: ________________________________  RM: ____________
+Nome: ________________________________  RM: ____________
+
+------------------------------------------------------------
+LINK DO REPOSITÓRIO GITHUB:
+------------------------------------------------------------
+https://github.com/[SEU-USUARIO]/[NOME-DO-REPOSITORIO]
+
+------------------------------------------------------------
+CONTEÚDO DO REPOSITÓRIO:
+------------------------------------------------------------
+README.md           → Documentação completa do projeto
+                      (integrantes, problema, proposta,
+                       tecnologias e justificativa técnica)
+
+docs/
+  fluxograma_chatbot_goodwe.png  → Fluxograma de funcionamento
+  modelo_de_teste.md             → 5 perguntas + respostas esperadas
+  system_prompt.md               → System prompt base do chatbot
+
+------------------------------------------------------------
+OBSERVAÇÕES:
+------------------------------------------------------------
+- Persona escolhida: Síndico / Gestor Condominial (contexto EV ChargeOps)
+- Tecnologia principal: OpenAI API (GPT-4o) + LangChain
+- Escopo: Gestão de recarga elétrica em condomínios residenciais
+
+============================================================
