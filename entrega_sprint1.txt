@@ -4,16 +4,16 @@
 
 INTEGRANTES:
 ------------------------------------------------------------
-Nome: ________________________________  RM: ____________
-Nome: ________________________________  RM: ____________
-Nome: ________________________________  RM: ____________
-Nome: ________________________________  RM: ____________
-Nome: ________________________________  RM: ____________
+Nome: Ana Beatriz Berbel Marini - RM 574176
+Nome: Gustavo Bonamico Piccoli - RM 569984
+Nome: Marcelo Francisco Josafá Ribeiro Martins - RM 573905
+Nome: Maria Eduarda Medeiros Lemos - RM 574094
+Nome: Pietro Lorande da SIlva - RM 569125
 
 ------------------------------------------------------------
 LINK DO REPOSITÓRIO GITHUB:
 ------------------------------------------------------------
-https://github.com/[SEU-USUARIO]/[NOME-DO-REPOSITORIO]
+https://github.com/pietrolorande01-ELFzen/Challenge-_AI-PROMPT
 
 ------------------------------------------------------------
 CONTEÚDO DO REPOSITÓRIO:
