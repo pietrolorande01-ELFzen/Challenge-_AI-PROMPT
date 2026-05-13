@@ -1,5 +1,24 @@
 #  ChatBot GoodWe — EV Challenge 2026
+============================================================
+  ENTREGA SPRINT 1 — EV CHALLENGE 2026 | GOODWE + FIAP
+============================================================
 
+INTEGRANTES:
+------------------------------------------------------------
+Ana Beatriz Berbel Marini - RM 574176
+Gustavo Bonamico Piccoli - RM 569984
+Marcelo Francisco Josafá Ribeiro Martins - RM 573905
+Maria Eduarda Medeiros Lemos - RM 574094
+Pietro Lorande da SIlva - RM 569125
+
+------------------------------------------------------------
+LINK DO REPOSITÓRIO GITHUB:
+------------------------------------------------------------
+https://github.com/pietrolorande01-ELFzen/Challenge-_AI-PROMPT
+
+------------------------------------------------------------
+CONTEÚDO DO REPOSITÓRIO:
+------------------------------------------------------------
 > Chatbot com IA para suporte operacional em eletropostos e gestão condominial de carregamento veicular.
 
 ---
