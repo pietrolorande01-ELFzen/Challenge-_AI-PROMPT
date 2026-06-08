@@ -120,9 +120,47 @@ goodwe-assist/
 
 ---
 
-## Próximos Passos (Sprint 2)
-
-- Implementar o chatbot com LangChain + GPT-4o;
-- Criar interface Streamlit funcional;
-- Executar os testes do modelo de teste e medir acurácia;
-- Iniciar a ingestão de documentação GoodWe via RAG.
+📄 Instruções de Execução
+Pré-requisitos:
+Conta Kaggle ou Google Colab
+Token da Hugging Face gratuito: https://huggingface.co/settings/tokens
+===========
+Como executar no Kaggle:
+Abra goodwe-sprint2.ipynb no Kaggle
+Clique em Add-ons → Secrets e adicione:
+Nome: HUGGING_FACE_API_KEY | Valor: seu token (hf_...)
+Suba os três PDFs como dataset e ajuste PASTA_PDFS na Célula 3
+Execute todas as células: Run All
+---
+Como executar no Google Colab:
+Abra o notebook no Colab
+Clique no ícone 🔑 (Secrets) e adicione HUGGING_FACE_API_KEY
+Faça upload dos PDFs e defina PASTA_PDFS = "/content" na Célula 3
+Execute todas as células: Runtime → Run all
+==========
+Dependências:
+chromadb · gradio · huggingface_hub · pypdf
+Instaladas automaticamente pela Célula 1.
+==========
+Variáveis de Ambiente:
+| Variável | Onde configurar | Descrição |
+|---|---|---|
+| HUGGING_FACE_API_KEY | Kaggle Secrets / Colab Secrets	| Token de acesso à Hugging Face Inference API |
+⚠️ Nunca exponha sua API Key no código ou em repositório público.
+==========
+Melhorias aplicadas nesta versão
+| # | Problema | Correção |
+|---|---|---|
+| 1 | `kaggle_secrets` quebrava no Colab | Detecção automática do ambiente (Kaggle, Colab ou env var) |
+| 2 | `HTTPStatusError` sem tratamento | Retry automático (3 tentativas, 8s de pausa entre elas) |
+| 3 | Rate-limit entre os 5 testes | Pausa de 5s entre cada chamada de teste |
+| 4 | ChromaDB indexava textos inteiros | Indexação por chunks (melhor precisão no retrieval) |
+| 5 | Coleção duplicada ao re-executar | `delete_collection` antes de criar garante estado limpo |
+| 6 | Nome do PDF com espaço | Nomes dos arquivos mantidos exatamente como estão no Kaggle |
+| 7 | Path errado (`datasets/bpgustavo/...`) | Corrigido para `/kaggle/input/Dataset_Goodwe` + validação prévia com mensagem de erro clara |
+==========
+✅ RAG com ChromaDB — respostas baseadas nos documentos técnicos GoodWe
+✅ Few-Shot Prompting — exemplos no system prompt calibram tom e formato
+✅ Histórico de conversa — memória de múltiplos turnos
+✅ API Key via Secrets — sem exposição de credenciais no código
+✅ Retry com back-off — resiliência a erros transientes da Inference API
