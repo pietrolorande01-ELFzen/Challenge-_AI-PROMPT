@@ -13,8 +13,6 @@
 
 ## Integrantes
 
-> *(Preencher com nome e RM de cada integrante do grupo)*
-
 | Nome | RM |
 |---|---|
 | Ana Beatriz Berbel Marini | RM574176 |
@@ -147,7 +145,9 @@ Variáveis de Ambiente:
 |---|---|---|
 | HUGGING_FACE_API_KEY | Kaggle Secrets / Colab Secrets	| Token de acesso à Hugging Face Inference API |
 ⚠️ Nunca exponha sua API Key no código ou em repositório público.
-==========
+
+---
+
 Melhorias aplicadas nesta versão
 | # | Problema | Correção |
 |---|---|---|
