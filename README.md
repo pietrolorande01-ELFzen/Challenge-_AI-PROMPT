@@ -144,6 +144,9 @@ Variáveis de Ambiente:
 | Variável | Onde configurar | Descrição |
 |---|---|---|
 | HUGGING_FACE_API_KEY | Kaggle Secrets / Colab Secrets	| Token de acesso à Hugging Face Inference API |
+
+---
+
 ⚠️ Nunca exponha sua API Key no código ou em repositório público.
 
 ---
@@ -158,7 +161,9 @@ Melhorias aplicadas nesta versão
 | 5 | Coleção duplicada ao re-executar | `delete_collection` antes de criar garante estado limpo |
 | 6 | Nome do PDF com espaço | Nomes dos arquivos mantidos exatamente como estão no Kaggle |
 | 7 | Path errado (`datasets/bpgustavo/...`) | Corrigido para `/kaggle/input/Dataset_Goodwe` + validação prévia com mensagem de erro clara |
-==========
+
+---
+
 ✅ RAG com ChromaDB — respostas baseadas nos documentos técnicos GoodWe
 ✅ Few-Shot Prompting — exemplos no system prompt calibram tom e formato
 ✅ Histórico de conversa — memória de múltiplos turnos
