@@ -3,6 +3,7 @@
   GoodWe Assist - Chatbot de Operacao de Eletropostos
   Disciplina: Prompt and Artificial Intelligence
   Curso: Ciencia da Computacao - 1o ano - Semestre 2026.2
+Turma: 1CCPZ
 ============================================================
 
 ------------------------------------------------------------
@@ -10,27 +11,21 @@ INTEGRANTES DO GRUPO
 ------------------------------------------------------------
 Nome: Ana Beatriz Berbel Marini
 RM: 574176
-Turma: [PREENCHER]
 
 Nome: Gustavo Bonamico Piccoli
 RM: 569984
-Turma: [PREENCHER]
 
 Nome: Julian Nayde Moncoski
 RM: 572603
-Turma: [PREENCHER]
 
 Nome: Marcelo Francisco Josafa Ribeiro Martins
 RM: 573905
-Turma: [PREENCHER]
 
 Nome: Maria Eduarda Medeiros Lemos
 RM: 574094
-Turma: [PREENCHER]
 
 Nome: Pietro Lorande da Silva
 RM: 569125
-Turma: [PREENCHER]
 
 ------------------------------------------------------------
 LINK DO REPOSITORIO GITHUB (publico, com acesso ao professor)
