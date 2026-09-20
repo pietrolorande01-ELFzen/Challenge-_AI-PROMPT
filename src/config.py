@@ -99,22 +99,29 @@ class ConfigModelo:
 
 
 # Grade de modelos usada na comparação. Mínimo exigido: 2 modelos.
+#
+# IMPORTANTE: a partir de 2026 a Hugging Face passou a exigir que o repo_id
+# informe também o provedor de inferência, no formato "modelo:provedor"
+# (ex.: "Qwen/Qwen2.5-7B-Instruct:featherless-ai"). Sem isso, a chamada falha
+# com "not supported by any provider you have enabled". O provedor certo de
+# cada modelo aparece na própria página do modelo no site da Hugging Face,
+# no botão "Deploy" → exemplo de código.
 MODELOS: dict[str, ConfigModelo] = {
     "qwen": ConfigModelo(
         apelido="qwen",
-        repo_id="Qwen/Qwen2.5-7B-Instruct",
+        repo_id="Qwen/Qwen2.5-7B-Instruct:featherless-ai",
         temperature=0.2,
         top_p=0.9,
         max_tokens=600,
-        observacao="Modelo usado nas Sprints 1/2 — baseline de continuidade.",
+        observacao="Modelo usado nas Sprints 1/2 — baseline de continuidade. Provedor: featherless-ai.",
     ),
     "llama": ConfigModelo(
         apelido="llama",
-        repo_id="meta-llama/Llama-3.1-8B-Instruct",
+        repo_id="meta-llama/Llama-3.1-8B-Instruct:novita",
         temperature=0.2,
         top_p=0.9,
         max_tokens=600,
-        observacao="Candidato alternativo, mesma faixa de custo na Inference API.",
+        observacao="Candidato alternativo, mesma faixa de custo na Inference API. Provedor: novita.",
     ),
     "mistral": ConfigModelo(
         apelido="mistral",
@@ -122,7 +129,7 @@ MODELOS: dict[str, ConfigModelo] = {
         temperature=0.2,
         top_p=0.9,
         max_tokens=600,
-        observacao="Terceiro modelo opcional (controle).",
+        observacao="Terceiro modelo opcional (controle). Verificar provedor na página do modelo antes de usar.",
     ),
 }
 

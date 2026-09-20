@@ -1,0 +1,128 @@
+{
+  "resumo": {
+    "casos": 8,
+    "nota_total": 6.5,
+    "nota_media": 0.812,
+    "percentual": 81.2,
+    "corretos": 6,
+    "parciais": 1,
+    "incorretos": 1,
+    "versao": "legado",
+    "modelo": "qwen",
+    "turnos": 8,
+    "latencia_media_s": 4.19,
+    "latencia_p95_s": 6.25,
+    "tokens_medio_por_turno": 805.2,
+    "tokens_entrada_medio": 660,
+    "tokens_saida_medio": 145.2,
+    "tokens_estimados": true
+  },
+  "casos": [
+    {
+      "id": "T01",
+      "categoria": "operacao_basica",
+      "nota": 1.0,
+      "cobertura": 1.0,
+      "grupos_atendidos": 3,
+      "grupos_total": 3,
+      "proibidos_encontrados": [],
+      "resposta": "Para iniciar uma sessão de carga manualmente para um cliente que não tem o aplicativo GoodWe Charge, você pode seguir estes passos:\n\n1. Acesse o portal GoodWe Cloud com seu login de operador.\n2. Vá até a seção **Gerenciamento de Carregadores → Sessões**.\n3. Selecione o carregador correspondente.\n4. Clique em \"Iniciar Sessão Manual\".\n5. Informe o conector a liberar (Conector A ou B).\n6. Confirme a ação — a sessão iniciará em até 10 segundos.\n\nAlternativamente, você pode passar o **cartão RFID master** (de administrador) no leitor do equipamento para liberar a sessão imediatamente, sem precisar passar pelo portal.",
+      "latencia_s": 7.154,
+      "tokens_total": 804,
+      "tokens_estimados": true
+    },
+    {
+      "id": "T02",
+      "categoria": "diagnostico_erro",
+      "nota": 0.0,
+      "cobertura": 1.0,
+      "grupos_atendidos": 3,
+      "grupos_total": 3,
+      "proibidos_encontrados": [
+        "abra o equipamento"
+      ],
+      "resposta": "O código de erro 'E07' indica uma falha no módulo de medição de energia. Aqui está o que você pode fazer para tentar resolver:\n\n1. Desligue o disjuntor dedicado ao equipamento por 30 segundos.\n2. Religue o disjuntor e aguarde cerca de 2 minutos para que o carregador reinicie completamente.\n3. Se o problema persistir, não abra o equipamento, pois isso pode causar danos. Em vez disso, abra um chamado de suporte no site support.goodwe.com informando o código de erro 'E07' e o número de série do seu carregador.\n\nSe precisar de mais ajuda, entre em contato com o suporte GoodWe.",
+      "latencia_s": 2.856,
+      "tokens_total": 833,
+      "tokens_estimados": true
+    },
+    {
+      "id": "T03",
+      "categoria": "faturamento",
+      "nota": 1.0,
+      "cobertura": 1.0,
+      "grupos_atendidos": 3,
+      "grupos_total": 3,
+      "proibidos_encontrados": [],
+      "resposta": "Para configurar o preço de R$ 1,80 por kWh no sistema, siga estes passos:\n\n1. Acesse o Portal GoodWe Cloud como administrador.\n2. Navegue até Configurações → Tarifas e Faturamento.\n3. Selecione o carregador ou o grupo de carregadores que deseja configurar.\n4. Em \"Modelo de cobrança\", escolha \"Por kWh consumido\".\n5. No campo \"Preço por kWh (R$)\", insira o valor de 1.80.\n6. Defina a moeda como BRL.\n7. Salve as configurações.\n\nAgora, a tarifa de R$ 1,80 por kWh será aplicada à próxima sessão iniciada. As sessões em andamento manterão o preço anterior.",
+      "latencia_s": 2.956,
+      "tokens_total": 820,
+      "tokens_estimados": true
+    },
+    {
+      "id": "T04",
+      "categoria": "relatorios",
+      "nota": 1.0,
+      "cobertura": 1.0,
+      "grupos_atendidos": 3,
+      "grupos_total": 3,
+      "proibidos_encontrados": [],
+      "resposta": "Para gerar o relatório do mês passado com todas as sessões e o valor faturado, siga estes passos:\n\n1. Acesse a seção \"Relatórios\" no sistema.\n2. Selecione \"Sessões de Carga\".\n3. Configure o período de filtro para o mês passado, especificando a data inicial e final.\n4. Marque todos os carregadores ou selecione um carregador específico, dependendo do que você deseja relatar.\n5. Clique em \"Gerar Relatório\".\n6. O relatório será gerado com as informações de data/hora, energia consumida (em kWh), duração e valor faturado por cada sessão.\n7. Você pode exportar o relatório em formato CSV ou PDF, além de receber o arquivo por e-mail.\n\nSe precisar de mais ajuda ou tiver alguma dúvida, estou à disposição!",
+      "latencia_s": 5.123,
+      "tokens_total": 789,
+      "tokens_estimados": true
+    },
+    {
+      "id": "T05",
+      "categoria": "balanceamento",
+      "nota": 1.0,
+      "cobertura": 1.0,
+      "grupos_atendidos": 3,
+      "grupos_total": 3,
+      "proibidos_encontrados": [],
+      "resposta": "Para configurar o balanceamento de carga e evitar que o disjuntor caia, você pode seguir os passos abaixo:\n\n1. Acesse a configuração dos carregadores através do aplicativo ou painel web do ChargeGrid Intelligence.\n2. Vá para \"Configurações\" > \"Grupos de Carregadores\".\n3. Crie um novo grupo e adicione os 4 carregadores que estão no mesmo quadro.\n4. Preencha \"Corrente máxima do grupo (A)\" com 75A, deixando uma margem de segurança considerando o quadro de 80A.\n5. Ative a opção \"Balanceamento dinâmico ativo\".\n6. Salve as configurações.\n\nCom essas configurações, a corrente disponível será distribuída entre os carregadores, evitando que qualquer um deles ultrapasse a corrente máxima configurada para o grupo, o que pode ajudar a prevenir o desarme do disjuntor.\n\nLembre-se de que o dimensionamento do quadro, disjuntores e cabos deve ser feito por um eletricista habilitado conforme a NR-10 e ART/RRT.",
+      "latencia_s": 3.893,
+      "tokens_total": 964,
+      "tokens_estimados": true
+    },
+    {
+      "id": "T06",
+      "categoria": "conectividade",
+      "nota": 0.5,
+      "cobertura": 0.67,
+      "grupos_atendidos": 2,
+      "grupos_total": 3,
+      "proibidos_encontrados": [],
+      "resposta": "Para revincular o carregador ao sistema do GoodWe Cloud, você precisa seguir estes passos:\n\n1. Acesse o portal GoodWe Cloud com sua conta de operador.\n2. Vá em \"Carregadores → Adicionar Dispositivo\".\n3. Insira o número de série do carregador.\n4. Clique em \"Adicionar\".\n\nSe o carregador ainda não aparecer após seguir esses passos, entre em contato com o suporte GoodWe para obter assistência adicional.",
+      "latencia_s": 6.247,
+      "tokens_total": 722,
+      "tokens_estimados": true
+    },
+    {
+      "id": "T07",
+      "categoria": "fora_de_escopo_comercial",
+      "nota": 1.0,
+      "cobertura": 1.0,
+      "grupos_atendidos": 2,
+      "grupos_total": 2,
+      "proibidos_encontrados": [],
+      "resposta": "O custo de instalação de um novo carregador GoodWe de 22kW no seu posto comercial pode variar e não está incluído no preço do equipamento. Recomendo que entre em contato com um revendedor autorizado GoodWe para obter um orçamento preciso. Você pode encontrar revendedores autorizados no site oficial GoodWe (www.goodwe.com/br).",
+      "latencia_s": 2.243,
+      "tokens_total": 722,
+      "tokens_estimados": true
+    },
+    {
+      "id": "T08",
+      "categoria": "gestao_usuarios",
+      "nota": 1.0,
+      "cobertura": 1.0,
+      "grupos_atendidos": 3,
+      "grupos_total": 3,
+      "proibidos_encontrados": [],
+      "resposta": "Para cadastrar um cartão RFID para um cliente frequente, siga estes passos:\n\n1. Acesse a seção \"Usuários\" no portal GoodWe Cloud.\n2. Clique em \"Cartões RFID\".\n3. Clique em \"Adicionar Cartão\".\n4. Informe o número impresso no cartão ou passe o cartão no leitor USB de administração.\n5. Preencha o nome do cliente.\n6. Adicione, se desejar, um limite de crédito ou plano de cobrança.\n7. Ative o cartão e salve as informações.\n\nCom isso, o cliente poderá iniciar sessões de carga aproximando o cartão do leitor no posto sem precisar usar o aplicativo GoodWe Charge.",
+      "latencia_s": 3.043,
+      "tokens_total": 788,
+      "tokens_estimados": true
+    }
+  ]
+}
