@@ -1,0 +1,15 @@
+# GoodWe Assist — Sprint 03
+langchain-core>=0.3.29
+langchain>=0.3.14
+langchain-community>=0.3.14
+langchain-huggingface>=0.1.2
+langchain-chroma>=0.2.0
+langchain-text-splitters>=0.3.5
+sentence-transformers>=3.3.0
+chromadb>=0.5.23
+huggingface_hub>=0.27.0
+pypdf>=5.1.0
+gradio>=5.9.0
+
+# Opcional — habilita o provedor OpenAI na comparação entre modelos
+# langchain-openai>=0.2.14

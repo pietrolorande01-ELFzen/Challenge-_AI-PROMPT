@@ -1,0 +1,48 @@
+========================================================
+  ENTREGÁVEL SPRINT 1 — EV CHALLENGE 2026 / GOODWE / FIAP
+  GoodWe Assist — Chatbot de Operação de Eletropostos
+========================================================
+
+------------------------------------------------------------
+INTEGRANTES DO GRUPO
+------------------------------------------------------------
+Nome: Ana Beatriz Berbel Marini - RM 574176
+Nome: Gustavo Bonamico Piccoli - RM 569984
+Nome: Marcelo Francisco Josafá Ribeiro Martins - RM 573905
+Nome: Maria Eduarda Medeiros Lemos - RM 574094
+Nome: Pietro Lorande da SIlva - RM 569125
+
+------------------------------------------------------------
+LINK DO REPOSITÓRIO GITHUB
+------------------------------------------------------------
+https://github.com/pietrolorande01-ELFzen/Challenge-_AI-PROMPT
+
+Estrutura do repositório:
+  - README.md            → Documentação completa do projeto
+  - fluxograma_goodwe_assist.svg  → Fluxograma do chatbot
+  - modelo_de_teste.md   → 8 pares pergunta/resposta ideal
+  - system_prompt.md     → System prompt base do modelo
+
+------------------------------------------------------------
+RESUMO DO PROJETO
+------------------------------------------------------------
+Nome do Projeto : GoodWe Assist
+Contexto        : Operação Comercial (ChargeGrid Intelligence)
+Persona         : Operador comercial de eletroposto GoodWe
+Tecnologia      : GPT-4o (OpenAI API) + LangChain + Streamlit
+Escopo          : Suporte operacional a gestores de eletropostos
+                  comerciais (postos, estacionamentos, shoppings)
+
+------------------------------------------------------------
+OBSERVAÇÕES
+------------------------------------------------------------
+- O repositório contém README, fluxograma e modelo de teste
+  conforme exigido pelos critérios de avaliação da Sprint 1.
+- O system prompt foi elaborado para condicionar o modelo
+  ao contexto da GoodWe (operação comercial).
+- Contexto comercial escolhido e justificado no README.
+
+========================================================
+  Arquivo gerado para entrega via portal FIAP
+  Sprint 1 — EV Challenge 2026
+========================================================

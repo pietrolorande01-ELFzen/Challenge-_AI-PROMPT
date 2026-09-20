@@ -1,171 +1,144 @@
-# GoodWe Assist — Chatbot de Operação de Eletropostos Comerciais
+# GoodWe Assist — Sprint 03
 
-## Identificação do Projeto
+Chatbot de operação de eletropostos comerciais GoodWe, com núcleo conversacional reconstruído em
+**framework de agentes (LangChain)**, memória por sessão nativa, guardrails de segurança e
+avaliação reprodutível.
 
 | Campo | Informação |
 |---|---|
-| **Projeto** | GoodWe Assist |
-| **Desafio** | EV Challenge 2026 — GoodWe / FIAP |
-| **Contexto escolhido** | Operação Comercial (ChargeGrid Intelligence) |
-| **Sprint** | Sprint 1 — Exploração e Planejamento |
-
----
+| Projeto | GoodWe Assist |
+| Desafio | EV Challenge 2026 — GoodWe / FIAP |
+| Contexto | Operação Comercial — ChargeGrid Intelligence |
+| Persona | Operador comercial de eletroposto |
+| Disciplina | Prompt and Artificial Intelligence — 1º ano Ciência da Computação — 2026.2 |
+| Sprint | 03 — Refactory conversacional com framework de agentes |
+| Framework | LangChain (LCEL + `RunnableWithMessageHistory`) |
+| Modelos avaliados | `Qwen/Qwen2.5-7B-Instruct` · `meta-llama/Llama-3.1-8B-Instruct` |
 
 ## Integrantes
 
 | Nome | RM |
 |---|---|
-| Ana Beatriz Berbel Marini | RM574176 |
-| Gustavo Bonamico Piccoli | RM569984 |
-| Marcelo Francisco Josafá Ribeiro Martins | RM573905 |
-| Maria Eduarda Medeiros Lemos | RM574094 |
-| Pietro Lorande da Silva | RM569125 |
+| Ana Beatriz Berbel Marini | 574176 |
+| Gustavo Bonamico Piccoli | 569984 |
+| Julian Nayde Moncoski | 572603 |
+| Marcelo Francisco Josafá Ribeiro Martins | 573905 |
+| Maria Eduarda Medeiros Lemos | 574094 |
+| Pietro Lorande da Silva | 569125 |
 
 ---
 
-## Problema Abordado
+## O que mudou em relação às Sprints 1 e 2
 
-Os eletropostos comerciais GoodWe operam sem mecanismos integrados capazes de:
-
-- **Orquestrar a potência** disponível entre múltiplos carregadores simultaneamente;
-- **Registrar ciclos de carga** de forma rastreável e auditável;
-- **Faturar sessões** automaticamente por kWh, tempo ou valor fixo;
-- **Comunicar status e alertas** ao operador em tempo real.
-
-Essa lacuna — chamada no desafio de **ChargeGrid Intelligence** — cria gargalos operacionais, perda de receita e experiência degradada para o operador e para o usuário final do posto.
-
----
-
-## Proposta do Chatbot
-
-O **GoodWe Assist** é um assistente conversacional especializado no contexto de **operação comercial de eletropostos GoodWe**. Ele atua como primeira linha de suporte operacional para o **operador comercial** (gestor de posto de gasolina, estacionamento, shopping ou frota), respondendo perguntas sobre:
-
-- Configuração e gestão de carregadores GoodWe;
-- Monitoramento e status de sessões de carga;
-- Faturamento, relatórios e exportação de dados;
-- Diagnóstico de erros e alertas operacionais;
-- Boas práticas de operação e manutenção preventiva.
-
-### Persona Atendida
-
-**Operador comercial** — gestor responsável pela operação diária do eletroposto. Tem conhecimento básico de TI, mas não é técnico especialista. Precisa de respostas diretas, práticas e em português.
-
-### Justificativa da Escolha do Contexto Comercial
-
-O contexto comercial foi escolhido por concentrar o maior volume de dúvidas operacionais recorrentes e por ter impacto direto na geração de receita. Operadores comerciais:
-
-1. Gerenciam múltiplos carregadores simultaneamente;
-2. Precisam de respostas rápidas para não interromper o atendimento ao cliente;
-3. Não têm tempo (nem perfil técnico) para consultar manuais extensos;
-4. Dependem de faturamento correto para viabilidade financeira do posto.
-
-Um chatbot bem calibrado nesse contexto **reduz chamados ao suporte técnico GoodWe, aumenta a autonomia do operador e melhora a disponibilidade dos carregadores**.
-
----
-
-## Tecnologias Selecionadas
-
-| Componente | Tecnologia | Justificativa |
+| | Sprints 1/2 | Sprint 03 |
 |---|---|---|
-| Modelo de linguagem | **OpenAI GPT-4o** (via API) | Alta qualidade de compreensão contextual em português; suporte nativo a system prompts detalhados; latência adequada para uso conversacional |
-| Orquestração | **LangChain (Python)** | Facilita a injeção de contexto, gerenciamento de histórico de conversa e futura integração com RAG |
-| Interface (MVP) | **Streamlit** | Prototipagem rápida de interfaces web; sem necessidade de frontend dedicado para a Sprint 2 |
-| Armazenamento de contexto | **FAISS + LangChain** | Vetorização do manual GoodWe e FAQs para recuperação semântica (RAG) nas próximas sprints |
-| Backend futuro | **FastAPI** | API REST leve para integração com sistemas externos (dashboard GoodWe, notificações) |
+| Núcleo conversacional | `InferenceClient` chamado direto, sem framework | Chain LangChain (LCEL) |
+| Memória | Lista Python global remontada a cada chamada | `RunnableWithMessageHistory` + `InMemoryChatMessageHistory` por `session_id`, com janela deslizante |
+| RAG | `colecao.query` dentro da função do chatbot | `Chroma` exposto como retriever injetável |
+| Segurança | Nenhuma camada dedicada | 3 camadas de guardrail + 11 casos de teste |
+| Avaliação | Tabela markdown preenchida à mão | `eval/run_eval.py` — nota determinística, latência e tokens por turno |
+| Modelos | Um modelo fixo | Grade de modelos e varredura de parametrização |
 
-### Por que não LLaMA local?
+O comparativo com os números medidos está em
+[`docs/relatorio_evolucao_sprint03.pdf`](docs/relatorio_evolucao_sprint03.pdf).
 
-O LLaMA exige infraestrutura GPU dedicada e apresenta desempenho inferior ao GPT-4o em português técnico. Para o MVP de demonstração, a API da OpenAI oferece melhor custo-benefício e qualidade imediata.
-
----
-
-## Fluxograma
-
-O fluxograma de funcionamento do chatbot está disponível no arquivo [`fluxograma_goodwe_assist.svg`](./fluxograma_goodwe_assist.svg) neste repositório.
-
-**Resumo do fluxo:**
-1. Operador digita pergunta na interface;
-2. LangChain monta o prompt completo (system prompt + histórico + pergunta);
-3. GPT-4o processa e gera resposta contextualizada;
-4. Resposta é exibida na interface;
-5. Caso o modelo não tenha certeza, redireciona ao suporte GoodWe.
-
----
-
-## Modelo de Teste
-
-O modelo de teste completo está disponível no arquivo [`modelo_de_teste.md`](./modelo_de_teste.md) neste repositório, contendo 8 pares pergunta/resposta ideal que serão usados como base de avaliação na Sprint 2.
-
----
-
-## System Prompt
-
-O system prompt base está disponível no arquivo [`system_prompt.md`](./system_prompt.md) neste repositório.
-
----
-
-## Estrutura do Repositório
+## Arquitetura
 
 ```
-goodwe-assist/
-├── README.md                        ← Este arquivo
-├── fluxograma_goodwe_assist.svg     ← Fluxograma do chatbot
-├── modelo_de_teste.md               ← 8 pares pergunta/resposta ideal
-├── system_prompt.md                 ← Prompt base do modelo
-└── docs/
-    └── justificativa_tecnica.md     ← Detalhamento das escolhas tecnológicas
+pergunta do operador
+   │
+   ├─► Guardrail de entrada ──(injection conhecida)──► resposta canônica  ✋ LLM nem é chamada
+   │        separa instrução × conteúdo colado
+   │
+   ├─► Retriever Chroma (k=3) ──► higienização do contexto
+   │
+   ├─► Prompt v3  +  Memória da sessão (LangChain)
+   │
+   ├─► LLM parametrizada (temperature · top_p · max_tokens)
+   │        instrumentação: latência e tokens
+   │
+   └─► Guardrail de saída ──► resposta + gravação na memória da sessão
 ```
 
----
+## Estrutura do repositório
 
-📄 Instruções de Execução
-Pré-requisitos:
-Conta Kaggle ou Google Colab
-Token da Hugging Face gratuito: https://huggingface.co/settings/tokens
-===========
-Como executar no Kaggle:
-Abra goodwe-sprint2.ipynb no Kaggle
-Clique em Add-ons → Secrets e adicione:
-Nome: HUGGING_FACE_API_KEY | Valor: seu token (hf_...)
-Suba os três PDFs como dataset e ajuste PASTA_PDFS na Célula 3
-Execute todas as células: Run All
----
-Como executar no Google Colab:
-Abra o notebook no Colab
-Clique no ícone 🔑 (Secrets) e adicione HUGGING_FACE_API_KEY
-Faça upload dos PDFs e defina PASTA_PDFS = "/content" na Célula 3
-Execute todas as células: Runtime → Run all
-==========
-Dependências:
-chromadb · gradio · huggingface_hub · pypdf
-Instaladas automaticamente pela Célula 1.
-==========
-Variáveis de Ambiente:
-| Variável | Onde configurar | Descrição |
-|---|---|---|
-| HUGGING_FACE_API_KEY | Kaggle Secrets / Colab Secrets	| Token de acesso à Hugging Face Inference API |
+```
+├── src/
+│   ├── agent.py        núcleo conversacional (chain + memória + guardrails + métricas)
+│   ├── memory.py       memória por sessão gerenciada pelo framework
+│   ├── guardrails.py   validação determinística de entrada e saída
+│   ├── knowledge.py    RAG: indexação Chroma e retriever
+│   ├── prompts.py      system prompt v3 (escopo, recusas, segurança)
+│   ├── metrics.py      latência e tokens por turno
+│   ├── config.py       modelos, parâmetros e carregamento seguro de credenciais
+│   └── app.py          interface Gradio
+├── legacy/chat_manual.py     baseline das Sprints 1/2, para o comparativo antes/depois
+├── eval/
+│   ├── eval_set.py     os mesmos 8 casos da Sprint 1 + roteiro de memória
+│   ├── security_set.py 11 casos de segurança (injection, recusas, escopo)
+│   ├── scoring.py      nota determinística 0 / 0,5 / 1
+│   └── run_eval.py     runner que gera todas as evidências
+├── scripts/gerar_relatorio.py   preenche os relatórios com os números medidos
+├── docs/               relatórios e justificativas
+├── data/               corpus de contingência do RAG
+├── results/            saídas do eval (JSON)
+└── notebooks/GoodWe_Sprint03.ipynb   demonstração executável ponta a ponta
+```
 
----
+## Como executar
 
-⚠️ Nunca exponha sua API Key no código ou em repositório público.
+### 1. Instalar
 
----
+```bash
+pip install -r requirements.txt
+cp .env.example .env     # preencha HUGGING_FACE_API_KEY
+```
 
-Melhorias aplicadas nesta versão
-| # | Problema | Correção |
-|---|---|---|
-| 1 | `kaggle_secrets` quebrava no Colab | Detecção automática do ambiente (Kaggle, Colab ou env var) |
-| 2 | `HTTPStatusError` sem tratamento | Retry automático (3 tentativas, 8s de pausa entre elas) |
-| 3 | Rate-limit entre os 5 testes | Pausa de 5s entre cada chamada de teste |
-| 4 | ChromaDB indexava textos inteiros | Indexação por chunks (melhor precisão no retrieval) |
-| 5 | Coleção duplicada ao re-executar | `delete_collection` antes de criar garante estado limpo |
-| 6 | Nome do PDF com espaço | Nomes dos arquivos mantidos exatamente como estão no Kaggle |
-| 7 | Path errado (`datasets/bpgustavo/...`) | Corrigido para `/kaggle/input/Dataset_Goodwe` + validação prévia com mensagem de erro clara |
+No Colab ou Kaggle, use Secrets em vez do `.env` — o carregamento é automático
+(`src/config.py::carregar_token`). **Nunca escreva a chave no código.**
 
----
+### 2. Base de conhecimento (opcional)
 
-✅ RAG com ChromaDB — respostas baseadas nos documentos técnicos GoodWe
-✅ Few-Shot Prompting — exemplos no system prompt calibram tom e formato
-✅ Histórico de conversa — memória de múltiplos turnos
-✅ API Key via Secrets — sem exposição de credenciais no código
-✅ Retry com back-off — resiliência a erros transientes da Inference API
+```bash
+export GOODWE_PDF_DIR=/caminho/para/os/pdfs   # Kaggle: /kaggle/input/<dataset> · Colab: /content
+```
+
+Sem os PDFs, o pipeline usa `data/base_conhecimento_goodwe.md`, o corpus consolidado das
+Sprints 1/2, e segue rodando.
+
+### 3. Conversar
+
+```bash
+python -m src.app          # interface Gradio
+```
+
+### 4. Rodar o eval completo
+
+```bash
+python -m eval.run_eval --tudo --modelos qwen llama
+python -m eval.run_eval --parametros qwen
+python scripts/gerar_relatorio.py
+```
+
+O primeiro comando gera `results/*.json`; o último preenche
+`docs/relatorio_modelos.md` e `docs/relatorio_evolucao_sprint03.pdf` com os números medidos.
+
+> A Inference API gratuita tem rate-limit. O runner já pausa 5 s entre casos e faz retry com
+> back-off, mas o eval completo leva alguns minutos. Se cair no meio, os blocos já concluídos
+> continuam salvos em `results/` e podem ser reexecutados individualmente
+> (`--seguranca`, `--memoria`, `--parametros`).
+
+## Documentação
+
+- [`docs/justificativa_framework.md`](docs/justificativa_framework.md) — por que LangChain, e o que foi descartado
+- [`docs/seguranca_guardrails.md`](docs/seguranca_guardrails.md) — arquitetura de guardrails e os 11 casos de teste
+- [`docs/relatorio_modelos.md`](docs/relatorio_modelos.md) — comparação entre modelos e parametrização
+- [`docs/relatorio_evolucao_sprint03.pdf`](docs/relatorio_evolucao_sprint03.pdf) — relatório de evolução (entrega obrigatória)
+
+## Segurança de credenciais
+
+`.env` está no `.gitignore`; o repositório traz apenas `.env.example`. Antes de cada push:
+
+```bash
+git grep -nE "hf_[A-Za-z0-9]{20,}|sk-[A-Za-z0-9]{20,}" && echo "⚠️ CREDENCIAL EXPOSTA"
+```

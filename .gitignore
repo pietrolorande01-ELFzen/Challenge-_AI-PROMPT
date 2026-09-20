@@ -1,0 +1,19 @@
+# Credenciais — exposição implica penalidade na entrega
+.env
+*.env
+!.env.example
+secrets.json
+*.key
+
+# Índice vetorial e caches
+.chroma/
+chroma_db/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Saídas grandes de execução (os JSON de eval SÃO versionados)
+*.log
+gradio_cached_examples/

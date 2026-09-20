@@ -1,0 +1,91 @@
+============================================================
+  ENTREGAVEL SPRINT 03 - EV CHALLENGE 2026 / GOODWE / FIAP
+  GoodWe Assist - Chatbot de Operacao de Eletropostos
+  Disciplina: Prompt and Artificial Intelligence
+  Curso: Ciencia da Computacao - 1o ano - Semestre 2026.2
+============================================================
+
+------------------------------------------------------------
+INTEGRANTES DO GRUPO
+------------------------------------------------------------
+Nome: Ana Beatriz Berbel Marini
+RM: 574176
+Turma: [PREENCHER]
+
+Nome: Gustavo Bonamico Piccoli
+RM: 569984
+Turma: [PREENCHER]
+
+Nome: Julian Nayde Moncoski
+RM: 572603
+Turma: [PREENCHER]
+
+Nome: Marcelo Francisco Josafa Ribeiro Martins
+RM: 573905
+Turma: [PREENCHER]
+
+Nome: Maria Eduarda Medeiros Lemos
+RM: 574094
+Turma: [PREENCHER]
+
+Nome: Pietro Lorande da Silva
+RM: 569125
+Turma: [PREENCHER]
+
+------------------------------------------------------------
+LINK DO REPOSITORIO GITHUB (publico, com acesso ao professor)
+------------------------------------------------------------
+https://github.com/pietrolorande01-ELFzen/Challenge-_AI-PROMPT
+
+------------------------------------------------------------
+ENTREGAVEIS DESTA SPRINT
+------------------------------------------------------------
+1. Framework de agentes ......... LangChain (LCEL + RunnableWithMessageHistory)
+                                  Justificativa: docs/justificativa_framework.md
+                                  Codigo: src/agent.py
+
+2. Memoria por sessao ........... InMemoryChatMessageHistory por session_id,
+                                  com janela deslizante (trim_messages)
+                                  Codigo: src/memory.py
+                                  Demonstracao 4 turnos: results/memoria_<modelo>.json
+                                  (rodar: python -m eval.run_eval --memoria)
+
+3. Seguranca e guardrails ....... 3 camadas + 11 casos de teste
+                                  Codigo: src/guardrails.py
+                                  Casos: eval/security_set.py
+                                  Documento: docs/seguranca_guardrails.md
+                                  Resultados: results/seguranca_*.json
+
+4. Comparacao entre modelos ..... Qwen2.5-7B-Instruct x Llama-3.1-8B-Instruct
+                                  + varredura de temperature/top_p/max_tokens
+                                  Relatorio: docs/relatorio_modelos.md
+                                  Resultados: results/qualidade_*.json,
+                                              results/parametros_*.json
+
+5. Relatorio de evolucao ........ docs/relatorio_evolucao_sprint03.pdf
+                                  (inclui a tabela antes/depois obrigatoria)
+
+------------------------------------------------------------
+COMO EXECUTAR
+------------------------------------------------------------
+pip install -r requirements.txt
+cp .env.example .env            # preencher HUGGING_FACE_API_KEY
+python -m src.app               # interface Gradio
+
+Reproduzir todas as evidencias:
+python -m eval.run_eval --tudo --modelos qwen llama
+python -m eval.run_eval --parametros qwen
+python scripts/gerar_relatorio.py
+
+------------------------------------------------------------
+SEGURANCA DE CREDENCIAIS
+------------------------------------------------------------
+Nenhuma API key no codigo ou no historico Git.
+Credenciais via variavel de ambiente, .env (gitignored),
+Kaggle Secrets ou Colab Secrets.
+O repositorio contem apenas .env.example, sem valor real.
+
+============================================================
+  Arquivo gerado para entrega via portal FIAP
+  Sprint 03 - EV Challenge 2026
+============================================================

@@ -1,0 +1,147 @@
+<svg viewBox="0 0 800 1020" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="1020" fill="#F7F9FC"/>
+
+  <!-- Title -->
+  <rect x="0" y="0" width="800" height="60" fill="#1B5E20"/>
+  <text x="400" y="38" text-anchor="middle" font-size="20" font-weight="bold" fill="white">GoodWe Assist — Fluxo de Funcionamento</text>
+
+  <!-- ===== LANE HEADERS ===== -->
+  <!-- Operator lane -->
+  <rect x="20" y="70" width="230" height="30" rx="6" fill="#E8F5E9"/>
+  <text x="135" y="91" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B5E20">👤 Operador Comercial</text>
+
+  <!-- LangChain lane -->
+  <rect x="285" y="70" width="230" height="30" rx="6" fill="#E3F2FD"/>
+  <text x="400" y="91" text-anchor="middle" font-size="13" font-weight="bold" fill="#1565C0">⚙️ LangChain (Orquestrador)</text>
+
+  <!-- LLM lane -->
+  <rect x="550" y="70" width="230" height="30" rx="6" fill="#FFF3E0"/>
+  <text x="665" y="91" text-anchor="middle" font-size="13" font-weight="bold" fill="#E65100">🤖 GPT-4o (LLM)</text>
+
+  <!-- Lane dividers vertical -->
+  <line x1="265" y1="70" x2="265" y2="990" stroke="#BDBDBD" stroke-width="1" stroke-dasharray="6,4"/>
+  <line x1="530" y1="70" x2="530" y2="990" stroke="#BDBDBD" stroke-width="1" stroke-dasharray="6,4"/>
+
+  <!-- ===== STEP 1: Operator types question ===== -->
+  <!-- rounded rect green -->
+  <rect x="30" y="120" width="210" height="54" rx="10" fill="#2E7D32" stroke="#1B5E20" stroke-width="1.5"/>
+  <text x="135" y="143" text-anchor="middle" font-size="13" font-weight="bold" fill="white">1. Operador digita</text>
+  <text x="135" y="162" text-anchor="middle" font-size="12" fill="#C8E6C9">pergunta na interface</text>
+
+  <!-- Arrow down from step 1 to step 2 -->
+  <line x1="135" y1="174" x2="135" y2="215" stroke="#1B5E20" stroke-width="2"/>
+  <polygon points="130,210 140,210 135,220" fill="#1B5E20"/>
+
+  <!-- ===== STEP 2: LangChain receives ===== -->
+  <rect x="295" y="220" width="210" height="54" rx="10" fill="#1565C0" stroke="#0D47A1" stroke-width="1.5"/>
+  <text x="400" y="243" text-anchor="middle" font-size="13" font-weight="bold" fill="white">2. LangChain recebe</text>
+  <text x="400" y="262" text-anchor="middle" font-size="12" fill="#BBDEFB">a pergunta do usuário</text>
+
+  <!-- Arrow from step 1 area to step 2 (horizontal) -->
+  <line x1="240" y1="147" x2="295" y2="147" stroke="#BDBDBD" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="295" y1="147" x2="295" y2="247" stroke="#1565C0" stroke-width="2"/>
+  <polygon points="290,242 300,242 295,252" fill="#1565C0"/>
+
+  <!-- ===== STEP 3: Prompt Assembly ===== -->
+  <rect x="295" y="310" width="210" height="80" rx="10" fill="#1976D2" stroke="#1565C0" stroke-width="1.5"/>
+  <text x="400" y="333" text-anchor="middle" font-size="13" font-weight="bold" fill="white">3. Monta o Prompt</text>
+  <text x="400" y="352" text-anchor="middle" font-size="11" fill="#BBDEFB">System Prompt +</text>
+  <text x="400" y="368" text-anchor="middle" font-size="11" fill="#BBDEFB">Histórico + Pergunta</text>
+  <text x="400" y="384" text-anchor="middle" font-size="11" fill="#BBDEFB">(contexto GoodWe)</text>
+
+  <!-- Arrow step 2 to step 3 -->
+  <line x1="400" y1="274" x2="400" y2="310" stroke="#1565C0" stroke-width="2"/>
+  <polygon points="395,305 405,305 400,315" fill="#1565C0"/>
+
+  <!-- ===== STEP 4: Send to GPT-4o ===== -->
+  <rect x="560" y="390" width="210" height="54" rx="10" fill="#E65100" stroke="#BF360C" stroke-width="1.5"/>
+  <text x="665" y="413" text-anchor="middle" font-size="13" font-weight="bold" fill="white">4. Envia para GPT-4o</text>
+  <text x="665" y="432" text-anchor="middle" font-size="12" fill="#FFE0B2">via OpenAI API</text>
+
+  <!-- Arrow step 3 to step 4 (horizontal) -->
+  <line x1="505" y1="350" x2="535" y2="350" stroke="#BDBDBD" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="535" y1="350" x2="535" y2="417" stroke="#E65100" stroke-width="2"/>
+  <line x1="535" y1="417" x2="560" y2="417" stroke="#E65100" stroke-width="2"/>
+  <polygon points="555,412 565,417 555,422" fill="#E65100"/>
+
+  <!-- ===== STEP 5: LLM processes ===== -->
+  <rect x="560" y="480" width="210" height="80" rx="10" fill="#F57C00" stroke="#E65100" stroke-width="1.5"/>
+  <text x="665" y="503" text-anchor="middle" font-size="13" font-weight="bold" fill="white">5. GPT-4o processa</text>
+  <text x="665" y="522" text-anchor="middle" font-size="11" fill="#FFF8E1">Interpreta contexto</text>
+  <text x="665" y="538" text-anchor="middle" font-size="11" fill="#FFF8E1">GoodWe + pergunta</text>
+  <text x="665" y="554" text-anchor="middle" font-size="11" fill="#FFF8E1">e gera resposta</text>
+
+  <!-- Arrow step 4 to step 5 -->
+  <line x1="665" y1="444" x2="665" y2="480" stroke="#E65100" stroke-width="2"/>
+  <polygon points="660,475 670,475 665,485" fill="#E65100"/>
+
+  <!-- ===== STEP 6: Decision — within scope? ===== -->
+  <!-- Diamond shape -->
+  <polygon points="400,600 500,650 400,700 300,650" fill="#6A1B9A" stroke="#4A148C" stroke-width="1.5"/>
+  <text x="400" y="644" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Está no</text>
+  <text x="400" y="662" text-anchor="middle" font-size="12" font-weight="bold" fill="white">escopo?</text>
+
+  <!-- Arrow from step 5 to decision -->
+  <line x1="665" y1="560" x2="665" y2="650" stroke="#F57C00" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="665" y1="650" x2="500" y2="650" stroke="#6A1B9A" stroke-width="2"/>
+  <polygon points="505,645 495,650 505,655" fill="#6A1B9A"/>
+
+  <!-- ===== YES path: Display answer ===== -->
+  <rect x="295" y="730" width="210" height="54" rx="10" fill="#2E7D32" stroke="#1B5E20" stroke-width="1.5"/>
+  <text x="400" y="753" text-anchor="middle" font-size="13" font-weight="bold" fill="white">7a. Exibe resposta</text>
+  <text x="400" y="772" text-anchor="middle" font-size="12" fill="#C8E6C9">contextualizada ao operador</text>
+
+  <!-- YES label and arrow -->
+  <text x="355" y="720" text-anchor="middle" font-size="12" fill="#2E7D32" font-weight="bold">SIM</text>
+  <line x1="400" y1="700" x2="400" y2="730" stroke="#2E7D32" stroke-width="2"/>
+  <polygon points="395,725 405,725 400,735" fill="#2E7D32"/>
+
+  <!-- ===== NO path: Fallback ===== -->
+  <rect x="560" y="730" width="210" height="54" rx="10" fill="#B71C1C" stroke="#7F0000" stroke-width="1.5"/>
+  <text x="665" y="753" text-anchor="middle" font-size="13" font-weight="bold" fill="white">7b. Indica Suporte</text>
+  <text x="665" y="772" text-anchor="middle" font-size="12" fill="#FFCDD2">GoodWe (fallback)</text>
+
+  <!-- NO label and arrow -->
+  <text x="548" y="645" text-anchor="end" font-size="12" fill="#B71C1C" font-weight="bold">NÃO</text>
+  <line x1="500" y1="650" x2="530" y2="650" stroke="#B71C1C" stroke-width="2"/>
+  <line x1="530" y1="650" x2="530" y2="757" stroke="#B71C1C" stroke-width="2"/>
+  <line x1="530" y1="757" x2="560" y2="757" stroke="#B71C1C" stroke-width="2"/>
+  <polygon points="555,752 565,757 555,762" fill="#B71C1C"/>
+
+  <!-- ===== STEP 8: Operator receives answer ===== -->
+  <rect x="30" y="840" width="210" height="54" rx="10" fill="#37474F" stroke="#263238" stroke-width="1.5"/>
+  <text x="135" y="863" text-anchor="middle" font-size="13" font-weight="bold" fill="white">8. Operador lê a</text>
+  <text x="135" y="882" text-anchor="middle" font-size="12" fill="#CFD8DC">resposta e age</text>
+
+  <!-- Arrow from step 7a to step 8 -->
+  <line x1="295" y1="757" x2="240" y2="757" stroke="#BDBDBD" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="240" y1="757" x2="240" y2="867" stroke="#37474F" stroke-width="2"/>
+  <line x1="240" y1="867" x2="240" y2="867" stroke="#37474F" stroke-width="2"/>
+  <line x1="135" y1="757" x2="135" y2="840" stroke="#37474F" stroke-width="2"/>
+  <!-- Connecting 7a bottom to step 8 -->
+  <line x1="400" y1="784" x2="400" y2="820" stroke="#BDBDBD" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <line x1="400" y1="820" x2="135" y2="820" stroke="#37474F" stroke-width="2"/>
+  <line x1="135" y1="820" x2="135" y2="840" stroke="#37474F" stroke-width="2"/>
+  <polygon points="130,835 140,835 135,845" fill="#37474F"/>
+
+  <!-- ===== LOOP: Follow-up question ===== -->
+  <rect x="30" y="930" width="210" height="42" rx="10" fill="#455A64" stroke="#37474F" stroke-width="1.5"/>
+  <text x="135" y="949" text-anchor="middle" font-size="12" font-weight="bold" fill="white">Nova pergunta?</text>
+  <text x="135" y="965" text-anchor="middle" font-size="11" fill="#CFD8DC">Histórico mantido</text>
+
+  <!-- Arrow step 8 to loop -->
+  <line x1="135" y1="894" x2="135" y2="930" stroke="#455A64" stroke-width="2"/>
+  <polygon points="130,925 140,925 135,935" fill="#455A64"/>
+
+  <!-- Loop arrow back -->
+  <path d="M 30 951 Q 10 951 10 400 Q 10 147 30 147" fill="none" stroke="#455A64" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="25,142 35,142 30,152" fill="#455A64"/>
+  <text x="8" y="560" text-anchor="middle" font-size="10" fill="#455A64" transform="rotate(-90, 8, 560)">retorno ao início</text>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="20" y="983" width="760" height="30" rx="6" fill="#ECEFF1"/>
+  <text x="400" y="1003" text-anchor="middle" font-size="11" fill="#546E7A">
+    EV Challenge 2026 — GoodWe / FIAP | Sprint 1 | Contexto: Operação Comercial | Modelo: GPT-4o via LangChain
+  </text>
+</svg>
