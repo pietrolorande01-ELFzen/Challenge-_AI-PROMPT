@@ -1,10 +1,7 @@
 # Relatório de uso de modelos e parâmetros — Sprint 03
 
 **Projeto:** GoodWe Assist · EV Challenge 2026 — GoodWe / FIAP
-**Gerado em:** 2026-09-19
-
-> ⚠️ **Relatório preliminar.** As células numéricas são preenchidas automaticamente após
-> `python -m eval.run_eval --tudo && python scripts/gerar_relatorio.py`.
+**Gerado em:** 2026-09-21
 
 ## 1. Modelos avaliados e parametrização
 
@@ -14,8 +11,7 @@ parâmetros — sem isso a comparação não mediria o modelo, mediria o context
 
 | Modelo | temperature | top_p | max_tokens | repetition_penalty | Observação |
 |---|---|---|---|---|---|
-| `Qwen/Qwen2.5-7B-Instruct` | 0.2 | 0.9 | 600 | 1.05 | Modelo usado nas Sprints 1/2 — baseline de continuidade. |
-| `meta-llama/Llama-3.1-8B-Instruct` | 0.2 | 0.9 | 600 | 1.05 | Candidato alternativo, mesma faixa de custo na Inference API. |
+| `meta-llama/Llama-3.1-8B-Instruct:novita` | 0.2 | 0.9 | 600 | 1.05 | Candidato alternativo, mesma faixa de custo na Inference API. Provedor: novita. |
 
 **Por que esses parâmetros como ponto de partida**
 
@@ -33,8 +29,7 @@ parâmetros — sem isso a comparação não mediria o modelo, mediria o context
 
 | Modelo | Nota média (0–1) | % do eval | Respostas corretas | Latência média | Tokens/turno | Aprovação em segurança |
 |---|---|---|---|---|---|---|
-| `Qwen/Qwen2.5-7B-Instruct` | — | — | —/— | — | — | — |
-| `meta-llama/Llama-3.1-8B-Instruct` | — | — | —/— | — | — | — |
+| `meta-llama/Llama-3.1-8B-Instruct:novita` | 0.812 | 81.2% | 6/8 | 2.89 s | 2204.2 | — |
 
 ## 3. Varredura de parametrização
 

@@ -1,0 +1,77 @@
+[
+  {
+    "parametros": {
+      "temperature": 0.0,
+      "top_p": 1.0,
+      "max_tokens": 600
+    },
+    "resumo": {
+      "casos": 8,
+      "nota_total": 7.5,
+      "nota_media": 0.938,
+      "percentual": 93.8,
+      "corretos": 7,
+      "parciais": 1,
+      "incorretos": 0,
+      "versao": "sprint3",
+      "modelo": "qwen",
+      "turnos": 8,
+      "latencia_media_s": 3.52,
+      "latencia_p95_s": 4.03,
+      "tokens_medio_por_turno": 2134.9,
+      "tokens_entrada_medio": 2009.6,
+      "tokens_saida_medio": 125.2,
+      "tokens_estimados": false
+    }
+  },
+  {
+    "parametros": {
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "resumo": {
+      "casos": 8,
+      "nota_total": 7.5,
+      "nota_media": 0.938,
+      "percentual": 93.8,
+      "corretos": 7,
+      "parciais": 1,
+      "incorretos": 0,
+      "versao": "sprint3",
+      "modelo": "qwen",
+      "turnos": 8,
+      "latencia_media_s": 3.72,
+      "latencia_p95_s": 4.74,
+      "tokens_medio_por_turno": 2141.1,
+      "tokens_entrada_medio": 2009.6,
+      "tokens_saida_medio": 131.5,
+      "tokens_estimados": false
+    }
+  },
+  {
+    "parametros": {
+      "temperature": 0.7,
+      "top_p": 0.95,
+      "max_tokens": 600
+    },
+    "resumo": {
+      "casos": 8,
+      "nota_total": 6.5,
+      "nota_media": 0.812,
+      "percentual": 81.2,
+      "corretos": 6,
+      "parciais": 1,
+      "incorretos": 1,
+      "versao": "sprint3",
+      "modelo": "qwen",
+      "turnos": 8,
+      "latencia_media_s": 3.29,
+      "latencia_p95_s": 4.05,
+      "tokens_medio_por_turno": 2143.4,
+      "tokens_entrada_medio": 2009.6,
+      "tokens_saida_medio": 133.8,
+      "tokens_estimados": false
+    }
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "gerado_em": "2026-09-21T08:44:27",
+  "modelos_testados": [
+    "llama"
+  ],
+  "qualidade": {
+    "llama": {
+      "casos": 8,
+      "nota_total": 6.5,
+      "nota_media": 0.812,
+      "percentual": 81.2,
+      "corretos": 6,
+      "parciais": 1,
+      "incorretos": 1,
+      "versao": "sprint3",
+      "modelo": "llama",
+      "turnos": 8,
+      "latencia_media_s": 2.89,
+      "latencia_p95_s": 5.05,
+      "tokens_medio_por_turno": 2204.2,
+      "tokens_entrada_medio": 2050.8,
+      "tokens_saida_medio": 153.5,
+      "tokens_estimados": false
+    }
+  },
+  "seguranca": {},
+  "memoria": {},
+  "parametros": {}
+}

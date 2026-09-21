@@ -1,0 +1,146 @@
+[
+  {
+    "versao": "sprint3",
+    "modelo": "llama",
+    "turno": 1,
+    "latencia_s": 7.049,
+    "tokens_entrada": 2035,
+    "tokens_saida": 173,
+    "estimado": false,
+    "extras": {
+      "session_id": "eval_llama_T01",
+      "bloqueado": false,
+      "guardrail": "ok",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "tokens_total": 2208
+  },
+  {
+    "versao": "sprint3",
+    "modelo": "llama",
+    "turno": 1,
+    "latencia_s": 1.502,
+    "tokens_entrada": 2098,
+    "tokens_saida": 118,
+    "estimado": false,
+    "extras": {
+      "session_id": "eval_llama_T02",
+      "bloqueado": false,
+      "guardrail": "ok",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "tokens_total": 2216
+  },
+  {
+    "versao": "sprint3",
+    "modelo": "llama",
+    "turno": 1,
+    "latencia_s": 2.471,
+    "tokens_entrada": 2077,
+    "tokens_saida": 187,
+    "estimado": false,
+    "extras": {
+      "session_id": "eval_llama_T03",
+      "bloqueado": false,
+      "guardrail": "ok",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "tokens_total": 2264
+  },
+  {
+    "versao": "sprint3",
+    "modelo": "llama",
+    "turno": 1,
+    "latencia_s": 2.152,
+    "tokens_entrada": 1980,
+    "tokens_saida": 236,
+    "estimado": false,
+    "extras": {
+      "session_id": "eval_llama_T04",
+      "bloqueado": false,
+      "guardrail": "ok",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "tokens_total": 2216
+  },
+  {
+    "versao": "sprint3",
+    "modelo": "llama",
+    "turno": 1,
+    "latencia_s": 1.712,
+    "tokens_entrada": 2138,
+    "tokens_saida": 182,
+    "estimado": false,
+    "extras": {
+      "session_id": "eval_llama_T05",
+      "bloqueado": false,
+      "guardrail": "ok",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "tokens_total": 2320
+  },
+  {
+    "versao": "sprint3",
+    "modelo": "llama",
+    "turno": 1,
+    "latencia_s": 1.878,
+    "tokens_entrada": 2013,
+    "tokens_saida": 104,
+    "estimado": false,
+    "extras": {
+      "session_id": "eval_llama_T06",
+      "bloqueado": false,
+      "guardrail": "ok",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "tokens_total": 2117
+  },
+  {
+    "versao": "sprint3",
+    "modelo": "llama",
+    "turno": 1,
+    "latencia_s": 1.299,
+    "tokens_entrada": 2031,
+    "tokens_saida": 62,
+    "estimado": false,
+    "extras": {
+      "session_id": "eval_llama_T07",
+      "bloqueado": false,
+      "guardrail": "ok",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "tokens_total": 2093
+  },
+  {
+    "versao": "sprint3",
+    "modelo": "llama",
+    "turno": 1,
+    "latencia_s": 5.047,
+    "tokens_entrada": 2034,
+    "tokens_saida": 166,
+    "estimado": false,
+    "extras": {
+      "session_id": "eval_llama_T08",
+      "bloqueado": false,
+      "guardrail": "ok",
+      "temperature": 0.2,
+      "top_p": 0.9,
+      "max_tokens": 600
+    },
+    "tokens_total": 2200
+  }
+]

@@ -1,6 +1,6 @@
 # Relatório de evolução do projeto — Sprint 03
 
-**GoodWe Assist · EV Challenge 2026 — GoodWe / FIAP** · 19/09/2026
+**GoodWe Assist · EV Challenge 2026 — GoodWe / FIAP** · 21/09/2026
 
 | | |
 |---|---|
@@ -8,10 +8,7 @@
 | **Contexto do desafio** | ChargeGrid Intelligence |
 | **Persona atendida** | Operador comercial de eletroposto |
 | **Disciplina** | Prompt and Artificial Intelligence — 1º ano Ciência da Computação — 2026.2 |
-| **Modelo principal avaliado** | `qwen` |
-
-> ⚠️ **Versão preliminar.** As células numéricas da tabela antes/depois são preenchidas
-> automaticamente por `scripts/gerar_relatorio.py` depois de `python -m eval.run_eval --tudo`.
+| **Modelo principal avaliado** | `llama` |
 
 ## 1. Resumo da evolução
 
@@ -72,18 +69,18 @@ plugável e interface uniforme entre provedores.
 ## 3. Tabela de comparativo antes/depois
 
 Mesmo eval set (8 casos das Sprints 1/2), mesmo retriever, mesmo modelo
-(`qwen`), executados na mesma sessão de testes.
+(`llama`), executados na mesma sessão de testes.
 
 | Métrica | Sprints 1/2 (versão manual/legado) | Sprint 03 (framework de agentes) |
 |---|---|---|
 | Framework do núcleo conversacional | Nenhum — `InferenceClient` direto | LangChain (LCEL + `RunnableWithMessageHistory`) |
 | Gestão de memória | Lista Python global, remontada a cada chamada | Memória nativa por `session_id` + janela deslizante |
-| **Qualidade das respostas — nota média no eval (0–1)** | — | — |
-| **Qualidade — % do eval set** | — | — |
-| Respostas corretas / parciais / incorretas | — / — / — | — / — / — |
-| **Tokens por turno (média)** | — | — |
-| **Latência média por turno** | — | — |
-| Latência p95 | — | — |
+| **Qualidade das respostas — nota média no eval (0–1)** | — | 0.812 |
+| **Qualidade — % do eval set** | — | 81.2% |
+| Respostas corretas / parciais / incorretas | — / — / — | 6 / 1 / 1 |
+| **Tokens por turno (média)** | — | 2204.2 |
+| **Latência média por turno** | — | 2.89 s |
+| Latência p95 | — | 5.05 s |
 | **Testes de segurança — casos aprovados** | — / — | — / — |
 | **Testes de segurança — taxa de aprovação** | — | — |
 | Ataques barrados antes de chegar à LLM | 0 (não havia camada) | — |
