@@ -1,5 +1,5 @@
 """
-Baseline das Sprints 1/2 — versão MANUAL, preservada para o comparativo de antes e depois.
+Baseline das Sprints 1/2 — versão MANUAL, preservada para o comparativo antes/depois.
 
 Características do legado (intencionalmente mantidas):
   · chamada direta ao InferenceClient da Hugging Face (sem framework);
