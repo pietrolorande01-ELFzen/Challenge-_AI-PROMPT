@@ -1,0 +1,62 @@
+============================================================
+  ENTREGAVEL SPRINT 04 - EV CHALLENGE 2026 / GOODWE / FIAP
+  GoodWe Assist - Avaliacao sistematica do agente
+  Disciplina: Prompt and Artificial Intelligence
+  Curso: Ciencia da Computacao - 1o ano - Semestre 2026.2
+  Turma: 1CCPZ
+============================================================
+
+------------------------------------------------------------
+INTEGRANTES DO GRUPO
+------------------------------------------------------------
+Nome: Ana Beatriz Berbel Marini
+RM: 574176
+Turma: 1CCPZ
+
+Nome: Gustavo Bonamico Piccoli
+RM: 569984
+Turma: 1CCPZ
+
+Nome: Julian Nayde Moncoski
+RM: 572603
+Turma: 1CCPZ
+
+Nome: Marcelo Francisco Josafa Ribeiro Martins
+RM: 573905
+Turma: 1CCPZ
+
+Nome: Maria Eduarda Medeiros Lemos
+RM: 574094
+Turma: 1CCPZ
+
+Nome: Pietro Lorande da Silva
+RM: 569125
+Turma: 1CCPZ
+
+------------------------------------------------------------
+LINK DO REPOSITORIO GITHUB (publico, com acesso ao professor)
+------------------------------------------------------------
+https://github.com/pietrolorande01-ELFzen/Challenge-_AI-PROMPT
+
+------------------------------------------------------------
+ENTREGAVEIS DESTA SPRINT
+------------------------------------------------------------
+1. Notebook do pipeline de avaliacao
+   notebooks/EV_Challenge_GoodWe_Sprint04_Avaliacao.ipynb
+   (golden dataset com 27 casos, LLM as a judge, metricas por criterio,
+    comparacao entre 3 versoes do agente e confronto com a Sprint 3)
+
+2. Relatorio final (PDF)
+   docs/relatorio_final_sprint04.pdf
+
+------------------------------------------------------------
+OBSERVACAO SOBRE A EXECUCAO
+------------------------------------------------------------
+O pipeline foi implementado e validado tecnicamente (teste de ponta a
+ponta em modo de simulacao, sem API). A execucao completa com as LLMs
+NAO foi concluida porque a cota gratuita do token da Hugging Face foi
+esgotada. Por isso as metricas finais por versao constam como "n/d" no
+relatorio, sem nenhum valor estimado. Ao reexecutar o notebook com cota
+disponivel, todas as tabelas sao geradas automaticamente em results_s4/.
+
+Nenhuma chave de API esta no codigo nem no historico do repositorio.
